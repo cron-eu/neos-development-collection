@@ -17,4 +17,7 @@ use TYPO3\TYPO3CR\Exception;
  */
 class ImportException extends Exception {
 
+	const hard = 0;
+	const soft = 1;
+
 }
