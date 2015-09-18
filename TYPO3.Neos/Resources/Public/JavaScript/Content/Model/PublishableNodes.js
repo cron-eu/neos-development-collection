@@ -134,6 +134,13 @@ define(
 								title = typeof page !== 'undefined' && typeof page.get(namespace + 'title') !== 'undefined' ? page.get(namespace + 'title') : '',
 								nodeTypeDefinition = NodeTypeService.getNodeTypeDefinition(nodeType);
 							Notification.ok('Published changes for ' + I18n.translate(nodeTypeDefinition.ui.label) + ' "' + $('<a />').html(title).text() + '"');
+                            require(
+                                {context: 'neos'},
+                                ['Content/Application'],
+                                function(ContentModule) {
+                                    ContentModule.reloadPage()
+                                }
+                            )
 						}
 						that.set('publishRunning', false);
 					},
