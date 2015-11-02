@@ -239,6 +239,7 @@ define(
 					that.set('workspaceWidePublishableEntitySubjects', []);
 					Notification.ok('Published all changes.');
 					that.set('publishAllRunning', false);
+					ContentModule.reloadPage();
 				},
 				function(error) {
 					that.set('publishAllRunning', false);
