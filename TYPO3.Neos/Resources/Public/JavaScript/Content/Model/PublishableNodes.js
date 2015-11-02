@@ -136,6 +136,7 @@ define(
 							Notification.ok('Published changes for ' + I18n.translate(nodeTypeDefinition.ui.label) + ' "' + $('<a />').html(title).text() + '"');
 						}
 						that.set('publishRunning', false);
+						ContentModule.reloadPage();
 					},
 					function(error) {
 						that.set('publishRunning', false);
@@ -238,6 +239,7 @@ define(
 					that.set('workspaceWidePublishableEntitySubjects', []);
 					Notification.ok('Published all changes.');
 					that.set('publishAllRunning', false);
+					ContentModule.reloadPage();
 				},
 				function(error) {
 					that.set('publishAllRunning', false);
