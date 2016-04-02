@@ -870,6 +870,9 @@ trait NodeOperationsTrait
             if (isset($humanReadableContextProperties['Workspace'])) {
                 $contextProperties['workspaceName'] = $humanReadableContextProperties['Workspace'];
             }
+            if (isset($humanReadableContextProperties['ShowHidden'])) {
+                $contextProperties['invisibleContentShown'] = $humanReadableContextProperties['ShowHidden'] === "true";
+            }
             foreach ($humanReadableContextProperties as $propertyName => $propertyValue) {
                 // Set flexible dimensions from features
                 if (strpos($propertyName, 'Dimension: ') === 0) {
