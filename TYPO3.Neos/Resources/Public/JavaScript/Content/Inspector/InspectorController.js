@@ -361,6 +361,10 @@ define(
 				if (errors.length > 0) {
 					hasValidationErrors = true;
 				}
+
+				// workaround for SelectBoxEditor with 'allowEmpty: true'
+				if (cleanPropertyValue === '[]' && value === '[""]' ) return;
+
 				if (value !== cleanPropertyValue) {
 					hasChanges = true;
 				}
@@ -371,6 +375,11 @@ define(
 		},
 
 		isPropertyModified: function(propertyName) {
+
+			// workaround for SelectBoxEditor with 'allowEmpty: true'
+			if (this.get('cleanProperties.' + propertyName) === '[]' &&
+				this.get('nodeProperties.' + propertyName) === '[""]' ) return false;
+
 			return this.get('cleanProperties.' + propertyName) !== this.get('nodeProperties.' + propertyName);
 		},
 
