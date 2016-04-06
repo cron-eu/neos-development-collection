@@ -148,6 +148,9 @@ define([
 			if (!selection) {
 				return;
 			}
+			if (that.get('placeholder') == 'Bitte auswählen..' && !value)
+				console.log('valueDidChange() for property "mainSection" with an empty value called, value: %s, values.length: %d',value, this.get('values').length)
+
 			if (this.get('multiple') || (value !== (valuePath ? this.get('selection.' + valuePath) : this.get('selection')))) {
 				this.set('selection', this.get('multiple') ? selection : selection[0]);
 				Ember.run.next(function() {
