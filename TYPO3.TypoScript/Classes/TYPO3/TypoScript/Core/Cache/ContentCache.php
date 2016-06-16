@@ -83,6 +83,12 @@ class ContentCache
     protected $securityContext;
 
     /**
+     * @var ContentCacheDebugger
+     * @Flow\Inject
+     */
+    protected $debugger;
+
+    /**
      * Takes the given content and adds markers for later use as a cached content segment.
      *
      * This function will add a start and an end token to the beginning and end of the content and generate a cache
@@ -237,11 +243,14 @@ class ContentCache
     public function replaceCachePlaceholders(&$content, $addCacheSegmentMarkersToPlaceholders)
     {
         $cache = $this->cache;
+        $debugger = $this->debugger;
         $foundMissingIdentifier = false;
-        $content = preg_replace_callback(self::CACHE_PLACEHOLDER_REGEX, function ($match) use ($cache, &$foundMissingIdentifier, $addCacheSegmentMarkersToPlaceholders) {
+        $content = preg_replace_callback(self::CACHE_PLACEHOLDER_REGEX, function ($match) use ($cache, &$foundMissingIdentifier, $addCacheSegmentMarkersToPlaceholders, $debugger) {
             $identifier = $match['identifier'];
             $entry = $cache->get($identifier);
             if ($entry !== false) {
+                // if debug enabled this method wraps the entry with identifier information
+                $entry = $debugger->wrapCacheEntry($identifier, $entry);
                 if ($addCacheSegmentMarkersToPlaceholders) {
                     return ContentCache::CACHE_SEGMENT_START_TOKEN . $identifier . ContentCache::CACHE_SEGMENT_SEPARATOR_TOKEN . '*' . ContentCache::CACHE_SEGMENT_SEPARATOR_TOKEN . $entry . ContentCache::CACHE_SEGMENT_END_TOKEN;
                 } else {
