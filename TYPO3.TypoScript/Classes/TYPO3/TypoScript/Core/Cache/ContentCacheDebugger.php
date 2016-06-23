@@ -41,14 +41,14 @@ class ContentCacheDebugger {
 	 */
 	public function wrapCacheEntry($identifier, $entry) {
 
-		if(!$this->settings['enabled']) return $entry;
+		//abort, if debugging disabled OR 'HTTP/...' in cache segment
+		if (!$this->settings['enabled'] || substr($entry, 0, 5) === 'HTTP/') return $entry;
 
-		//workaround: remove 'HTTP/1.1 200 OK' in first cache segment
 		return sprintf('
-		<!-- START: %s -->
-		%s
-		<!-- END: %s -->
-		', $identifier, str_replace('HTTP/1.1 200 OK', '', $entry), $identifier);
+		<!-- START: %1$s -->
+		%2$s
+		<!-- END: %1$s -->
+		', $identifier, $entry);
 	}
 
 }
