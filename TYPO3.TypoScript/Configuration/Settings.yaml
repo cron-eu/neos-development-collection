@@ -17,6 +17,8 @@ TYPO3:
       # meta-property in TypoScript, and it is especially useful for e.g. the "TYPO3.TypoScript:ResourceUri"
       # TypoScript Object, which should just return NULL silently if an exception occurs.
       innerExceptionHandler: 'TYPO3\TypoScript\Core\ExceptionHandlers\BubblingHandler'
+    contentCacheDebugger:
+      enabled: FALSE
     debugMode: FALSE
     enableContentCache: TRUE
 
