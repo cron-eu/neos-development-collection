@@ -1189,9 +1189,13 @@ class Node implements NodeInterface, CacheAwareInterface
         if ($this->isHidden() === $hidden) {
             return;
         }
+
+        $this->emitBeforeNodePropertyChange($this, '_hidden', !$hidden, $hidden);
+
         $this->nodeData->setHidden($hidden);
 
         $this->context->getFirstLevelNodeCache()->flush();
+        $this->emitNodePropertyChanged($this, '_hidden', !$hidden, $hidden);
         $this->emitNodeUpdated($this);
     }
 
@@ -1221,9 +1225,14 @@ class Node implements NodeInterface, CacheAwareInterface
         if ($this->getHiddenBeforeDateTime() instanceof \DateTime && $dateTime instanceof \DateTime && $this->getHiddenBeforeDateTime()->format(\DateTime::W3C) === $dateTime->format(\DateTime::W3C)) {
             return;
         }
+
+        $oldValue = $this->getHiddenBeforeDateTime();
+        $this->emitBeforeNodePropertyChange($this, '_hiddenBeforeDateTime', $oldValue, $dateTime);
+
         $this->nodeData->setHiddenBeforeDateTime($dateTime);
 
         $this->context->getFirstLevelNodeCache()->flush();
+        $this->emitNodePropertyChanged($this, '_hiddenBeforeDateTime', $oldValue, $dateTime);
         $this->emitNodeUpdated($this);
     }
 
@@ -1253,9 +1262,14 @@ class Node implements NodeInterface, CacheAwareInterface
         if ($this->getHiddenAfterDateTime() instanceof \DateTime && $dateTime instanceof \DateTime && $this->getHiddenAfterDateTime()->format(\DateTime::W3C) === $dateTime->format(\DateTime::W3C)) {
             return;
         }
+
+        $oldValue = $this->getHiddenAfterDateTime();
+        $this->emitBeforeNodePropertyChange($this, '_hiddenAfterDateTime', $oldValue, $dateTime);
+
         $this->nodeData->setHiddenAfterDateTime($dateTime);
 
         $this->context->getFirstLevelNodeCache()->flush();
+        $this->emitNodePropertyChanged($this, '_hiddenAfterDateTime', $oldValue, $dateTime);
         $this->emitNodeUpdated($this);
     }
 
@@ -1285,9 +1299,13 @@ class Node implements NodeInterface, CacheAwareInterface
         if ($this->isHiddenInIndex() === $hidden) {
             return;
         }
+
+        $this->emitBeforeNodePropertyChange($this, '_hiddenInIndex', !$hidden, $hidden);
+
         $this->nodeData->setHiddenInIndex($hidden);
 
         $this->context->getFirstLevelNodeCache()->flush();
+        $this->emitNodePropertyChanged($this, '_hiddenInIndex', !$hidden, $hidden);
         $this->emitNodeUpdated($this);
     }
 
