@@ -15,7 +15,9 @@ require(
 		baseUrl: window.T3Configuration.neosJavascriptBasePath,
 		urlArgs: window.T3Configuration.neosJavascriptVersion ? 'bust=' +  window.T3Configuration.neosJavascriptVersion : '',
 		paths: requirePaths,
-		context: 'neos'
+		context: 'neos',
+		waitSeconds: window.T3Configuration.UserInterface.requireJsWaitSeconds
+
 	},
 	[
 		'Library/jquery-with-dependencies',
@@ -28,7 +30,6 @@ require(
 		'Shared/Configuration',
 		'ExternalApi',
 		'Library/underscore',
-		'Shared/HttpClient',
 		'Shared/I18n',
 		'Shared/NodeTypeService',
 		'InlineEditing/PositioningHelper',
@@ -44,10 +45,8 @@ require(
 		Notification,
 		Configuration,
 		ExternalApi,
-		_,
-		HttpClient
-		) {
-
+		_
+	) {
 		ResourceCache.fetch(Configuration.get('VieSchemaUri'));
 
 		/**
@@ -55,7 +54,7 @@ require(
 		 */
 		Ember.RSVP.Promise(function (resolve, reject) {
 			// Get all translations and merge them
-			HttpClient.getResource(Configuration.get('localeInclude')).then(function(labels) {
+			ResourceCache.getItem(Configuration.get('XliffUri')).then(function(labels) {
 				try {
 					$.extend(Ember.I18n.translations, labels);
 				} catch (exception) {

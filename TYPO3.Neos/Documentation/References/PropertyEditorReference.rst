@@ -133,6 +133,8 @@ Options Reference:
 	``text/plain``, ``text/xml``, ``text/html``, ``text/css``, ``text/javascript``. If other highlighting modes shall be
 	used, they must be loaded beforehand using custom JS code. Default ``text/html``.
 
+.. _property-editor-reference-selectboxeditor:
+
 Property Type: string / array<string> ``SelectBoxEditor`` -- Dropdown Select Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -209,7 +211,9 @@ for properties of type ``array``. If an empty value is allowed as well, ``allowE
 
 Because selection options shall be fetched from server-side code frequently, the Select Box Editor contains
 support for so-called *data sources*, by setting a ``dataSourceIdentifier``, or optionally a ``dataSourceUri``.
-This helps to provide data to the editing interface without having to define routes, policies or a controller.::
+This helps to provide data to the editing interface without having to define routes, policies or a controller.
+
+.. code-block:: yaml
 
     questions:
       ui:
@@ -220,20 +224,46 @@ This helps to provide data to the editing interface without having to define rou
             # alternatively using a custom uri:
             # dataSourceUri: 'custom-route/end-point'
 
-See :ref:`data-sources` for more details.
-
-The output of the data source has to be a JSON formatted array matching the ``values`` option. Make sure you sort by
+See :ref:`data-sources` for more details on implementing a *data source* based on Neos conventions. If you are using a
+data source to populate SelectBoxEditor instances it has to be matching the ``values`` option. Make sure you sort by
 group first, if using the grouping option.
 
-Example:
+Example for returning compatible data:
 
 .. code-block:: php
 
-	return json_encode(array(
-		'key' => array('label' => 'Foo', group => 'A', 'icon' => 'icon-key'),
-		'fire' => array('label' => 'Fire', group => 'A', 'icon' => 'icon-fire')
-		'legal' => array('label' => 'Legal', group => 'B', 'icon' => 'icon-legal')
-	));
+  return array(
+      array('value' => 'key', 'label' => 'Foo', 'group' => 'A', 'icon' => 'icon-key'),
+      array('value' => 'fire', 'label' => 'Fire', 'group' => 'A', 'icon' => 'icon-fire'),
+      array('value' => 'legal', 'label' => 'Legal', 'group' => 'B', 'icon' => 'icon-legal')
+  );
+
+If you use the ``dataSourceUri`` option to connect to an arbitrary service, make sure the output of the data source
+is a JSON formatted array matching the following structure. Make sure you sort by group first, if using the grouping
+option.
+
+Example for compatible data:
+
+.. code-block:: json
+
+  [{
+    "value": "key",
+    "label": "Key",
+    "group": "A",
+    "icon": "icon-key"
+  },
+  {
+    "value": "fire",
+    "label": "Fire",
+    "group": "A",
+    "icon": "icon-fire"
+  },
+  {
+    "value": "legal",
+    "label": "Legal",
+    "group": "B",
+    "icon": "icon-legal"
+  }]
 
 Options Reference:
 
@@ -303,7 +333,7 @@ Furthermore, the placeholder text can be customized by setting the ``placeholder
             editorOptions:
               assets: FALSE
               nodeTypes: ['TYPO3.Neos:Shortcut']
-              placeholder: 'Paste a link, or type to search for nodes',
+              placeholder: 'Paste a link, or type to search for nodes'
 
 Property Type: integer ``TextFieldEditor``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,10 +380,10 @@ Options Reference:
 ``threshold`` (number)
 	Minimum amount of characters which trigger a search
 
-Property Type: date ``DateTimeEditor`` -- Date & Time Selection Editor
+Property Type: DateTime ``DateTimeEditor`` -- Date & Time Selection Editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The most important option for ``date`` properties is the ``format``, which is configured like in PHP, as the following
+The most important option for ``DateTime`` properties is the ``format``, which is configured like in PHP, as the following
 examples show:
 
 * ``d-m-Y``: ``05-12-2014`` -- allows to set only the date
@@ -363,7 +393,8 @@ examples show:
 Example::
 
     publishingDate:
-      type: date
+      type: DateTime
+      defaultValue: 'today midnight'
       ui:
         label: 'Publishing Date'
         inspector:
@@ -377,6 +408,11 @@ Options Reference:
 ``format`` (required string)
 	The date format, a combination of y, Y, F, m, M, n, t, d, D, j, l, N,
 	S, w, a, A, g, G, h, H, i, s. Default ``d-m-Y``.
+
+``defaultValue`` (string)
+  Sets property value, when the node is created. Accepted values are whatever
+  ``strtotime()`` can parse, but it works best with relative formats like
+  ``tomorrow 09:00`` etc. Use ``now`` to set current date and time.
 
 ``placeholder`` (string)
 	The placeholder shown when no date is selected

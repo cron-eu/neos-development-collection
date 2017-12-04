@@ -6,6 +6,9 @@
       <trans-unit id="autoPublish" xml:space="preserve">
 				<source>Auto-Publish</source>
 			<target xml:lang="km" state="translated">ចុះផ្សាយស្វ័យប្រវត្តិ</target></trans-unit>
+      <trans-unit id="autoPublishTo" xml:space="preserve">
+				<source>Auto-Publish to {0}</source>
+			<target xml:lang="km" state="needs-translation">Auto-Publish to {0}</target></trans-unit>
       <trans-unit id="apply" xml:space="preserve">
 				<source>Apply</source>
 			<target xml:lang="km" state="translated">អនុវត្ត</target></trans-unit>
@@ -15,6 +18,9 @@
       <trans-unit id="cancel" xml:space="preserve">
 				<source>Cancel</source>
 			<target xml:lang="km" state="translated">បោះបង់</target></trans-unit>
+      <trans-unit id="back" xml:space="preserve">
+				<source>Back</source>
+			<target xml:lang="km" state="translated">ត្រលប់ក្រោយ</target></trans-unit>
       <trans-unit id="choose" xml:space="preserve">
 				<source>Choose</source>
 			<target xml:lang="km" state="translated">ជ្រើសរើស</target></trans-unit>
@@ -24,6 +30,9 @@
       <trans-unit id="content" xml:space="preserve">
 				<source>Content</source>
 			<target xml:lang="km" state="translated">អត្ថបទ</target></trans-unit>
+      <trans-unit id="node" xml:space="preserve">
+				<source>Node</source>
+			<target xml:lang="km" state="needs-translation">Node</target></trans-unit>
       <trans-unit id="contentView" xml:space="preserve">
 				<source>Content View</source>
 			<target xml:lang="km" state="translated">មើលអត្ថបទ</target></trans-unit>
@@ -35,7 +44,7 @@
 			<target xml:lang="km" state="translated">បង្កើតថ្មី</target></trans-unit>
       <trans-unit id="close" xml:space="preserve">
 				<source>Close</source>
-			<target xml:lang="km" state="translated">បិត</target></trans-unit>
+			<target xml:lang="km" state="translated">បិទ</target><alt-trans><target xml:lang="km">បិត</target></alt-trans></trans-unit>
       <trans-unit id="copy" xml:space="preserve">
 				<source>Copy</source>
 			<target xml:lang="km" state="translated">ចម្លង</target></trans-unit>
@@ -56,7 +65,7 @@
 			<target xml:lang="km" state="translated">បោះបង់</target></trans-unit>
       <trans-unit id="discardChanges" xml:space="preserve">
 				<source>Discard changes</source>
-			<target xml:lang="km" state="translated">លះបង់ការ កែ</target></trans-unit>
+			<target xml:lang="km" state="translated">លះបង់​ការកែ</target><alt-trans><target xml:lang="km">លះបង់ការ កែ</target></alt-trans></trans-unit>
       <trans-unit id="editTitle" xml:space="preserve">
 				<source>Edit title</source>
 			<target xml:lang="km" state="translated">កែ​ចំណង​ជើង</target></trans-unit>
@@ -74,7 +83,7 @@
 			<target xml:lang="km" state="translated">កំពុងតម្លើង</target></trans-unit>
       <trans-unit id="newAfter" xml:space="preserve">
 				<source>New After</source>
-			<target xml:lang="km" state="translated">បង្កើតថ្មីបន្ទាប់ទៀត</target></trans-unit>
+			<target xml:lang="km" state="translated">បង្កើតថ្មីបន្ទាប់</target><alt-trans><target xml:lang="km">បង្កើតថ្មីបន្ទាប់ទៀត</target></alt-trans></trans-unit>
       <trans-unit id="newBefore" xml:space="preserve">
 				<source>New Before</source>
 			<target xml:lang="km" state="translated">បង្កើតថ្មីមុន</target></trans-unit>
@@ -111,12 +120,27 @@
       <trans-unit id="publish" xml:space="preserve">
 				<source>Publish</source>
 			<target xml:lang="km" state="translated">ដាក់ផ្សាយ</target></trans-unit>
+      <trans-unit id="publishTo" xml:space="preserve">
+				<source>Publish to {0}</source>
+			<target xml:lang="km" state="needs-translation">Publish to {0}</target></trans-unit>
+      <trans-unit id="publishAllChangesForCurrentPage" xml:space="preserve">
+				<source>Publish all changes for current page</source>
+			<target xml:lang="km" state="translated">ចុះផ្សាយរាល់ការផ្លាស់ប្ដូរសម្រាប់ទំព័រនេះ</target></trans-unit>
+      <trans-unit id="cantPublishBecauseTargetWorkspaceIsReadOnly" xml:space="preserve">
+				<source>Can't publish because the target workspace is read-only</source>
+			<target xml:lang="km" state="needs-translation">Can't publish because the target workspace is read-only</target></trans-unit>
+      <trans-unit id="publishing" xml:space="preserve">
+				<source>Publishing</source>
+			<target xml:lang="km" state="translated">កំពុងចុះផ្សាយ</target></trans-unit>
       <trans-unit id="published" xml:space="preserve">
 				<source>Published</source>
 			<target xml:lang="km" state="translated">បានចុះផ្សាយ</target></trans-unit>
       <trans-unit id="targetWorkspace" xml:space="preserve">
 				<source>Target workspace</source>
 			<target xml:lang="km" state="translated">ចូលទៅកាន់កន្លែងការងារ</target></trans-unit>
+      <trans-unit id="currentWorkspace" xml:space="preserve">
+				<source>Current workspace</source>
+			<target xml:lang="km" state="needs-translation">Current workspace</target></trans-unit>
       <trans-unit id="remove" xml:space="preserve">
 				<source>Remove</source>
 			<target xml:lang="km" state="translated">លុបចេញ</target></trans-unit>
@@ -124,7 +148,7 @@
 				<source>Refresh</source>
 			<target xml:lang="km" state="translated">ធ្វើឱ្យស្រស់</target></trans-unit>
       <trans-unit id="saving" xml:space="preserve">
-				<source>Saving...</source>
+				<source>Saving</source>
 			<target xml:lang="km" state="translated">កំពុង​រក្សា​ទុក</target></trans-unit>
       <trans-unit id="saved" xml:space="preserve">
 				<source>Saved</source>
@@ -143,18 +167,18 @@
 			<target xml:lang="km" state="translated">អ្នក</target></trans-unit>
       <trans-unit id="noTitle" xml:space="preserve">
 				<source>[no title]</source>
-			<target xml:lang="km" state="translated">[គ្មានចំណង]</target></trans-unit>
+			<target xml:lang="km" state="translated">[គ្មានចំណងជើង]</target><alt-trans><target xml:lang="km">[គ្មានចំណង]</target></alt-trans></trans-unit>
       <trans-unit id="labelCaption" xml:space="preserve">
 				<source>Label</source>
 			<target xml:lang="km" state="translated">ស្លាក</target></trans-unit>
       <trans-unit id="nodeTypeCaption" xml:space="preserve">
-				<source>Node type</source>
+				<source>Content Type</source>
 			<target xml:lang="km" state="translated">ប្រភេទនៃថ្នាំង</target></trans-unit>
       <trans-unit id="pathCaption" xml:space="preserve">
 				<source>Path</source>
 			<target xml:lang="km" state="translated">ទីតាំង</target></trans-unit>
       <trans-unit id="relativePathCaption" xml:space="preserve">
-				<source>Relative path</source>
+				<source>Relative Path</source>
 			<target xml:lang="km" state="translated">ទីតាំងប្រែប្រួល</target></trans-unit>
       <!-- node types -->
       <trans-unit id="nodeTypes.groups.general" xml:space="preserve">
@@ -162,26 +186,26 @@
 			<target xml:lang="km" state="translated">ជាទូទៅ</target></trans-unit>
       <trans-unit id="nodeTypes.groups.structure" xml:space="preserve">
 				<source>Structure</source>
-			<target xml:lang="km" state="translated">រចនាសម្ព័ន</target></trans-unit>
+			<target xml:lang="km" state="translated">រចនាសម្ព័ន្ធ</target><alt-trans><target xml:lang="km">រចនាសម្ព័ន</target></alt-trans></trans-unit>
       <trans-unit id="nodeTypes.groups.plugins" xml:space="preserve">
 				<source>Plugins</source>
 			<target xml:lang="km" state="translated">ឧបករណ៍</target></trans-unit>
       <!-- shortcuts -->
       <trans-unit id="shortcut.clickToContinueToPage" xml:space="preserve">
 				<source>Click {0} to continue to the page.</source>
-			<target xml:lang="km" state="translated">ចុចទីនេះដើម្បីបន្តរទៅទំព័រ {0}</target></trans-unit>
+			<target xml:lang="km" state="translated">ចុចទីនេះដើម្បីបន្តទៅទំព័រ {0}។</target><alt-trans><target xml:lang="km">ចុចទីនេះដើម្បីបន្តរទៅទំព័រ {0}</target></alt-trans></trans-unit>
       <trans-unit id="shortcut.clickToContinueToAsset" xml:space="preserve">
 				<source>Click {0} to see the file.</source>
-			<target xml:lang="km" state="translated">ចុចទីនេះដើម្បីបន្តទៅទ្រព្យ {0}</target><alt-trans><target xml:lang="km">ចុចទីនេះដើម្បីបន្តរទៅទ្រព្យ {0}</target></alt-trans></trans-unit>
+			<target xml:lang="km" state="translated">ចុចទីនេះដើម្បីបន្តទៅឯកសារ {0}។</target><alt-trans><target xml:lang="km">ចុចទីនេះដើម្បីបន្តរទៅឯកសារ {0}</target></alt-trans><alt-trans><target xml:lang="km">ចុចទីនេះដើម្បីបន្តរទៅទ្រព្យ {0}</target></alt-trans></trans-unit>
       <trans-unit id="shortcut.clickToContinueToExternalUrl" xml:space="preserve">
 				<source>Click {0} to open the link.</source>
-			<target xml:lang="km" state="translated">ចុចទីនេះដើម្បីបន្តទៅទំព័រមុន {0}.</target><alt-trans><target xml:lang="km">ចុចទីនេះដើម្បីបន្តរទៅទំព័រមុន {0}.</target></alt-trans></trans-unit>
+			<target xml:lang="km" state="translated">ចុចទីនេះដើម្បីបន្តទៅទំព័រមុន {0}។</target><alt-trans><target xml:lang="km">ចុចទីនេះដើម្បីបន្តរទៅទំព័រមុន {0}.</target></alt-trans></trans-unit>
       <trans-unit id="shortcut.noTargetSelected" xml:space="preserve">
 				<source>(no target has been selected)</source>
-			<target xml:lang="km" state="translated">(មិនជ្រើសរើសគោលដៅណាមួយទេ)</target></trans-unit>
+			<target xml:lang="km" state="translated">(មិនទាន់បានជ្រើសរើសគោលដៅណាមួយទេ)</target><alt-trans><target xml:lang="km">(មិនជ្រើសរើសគោលដៅណាមួយទេ)</target></alt-trans></trans-unit>
       <trans-unit id="shortcut.clickToContinueToFirstChildNode" xml:space="preserve">
 				<source>This is a shortcut to the first child page.&lt;br /&gt;Click {0} to continue to the page.</source>
-			<target xml:lang="km" state="translated">នេះគឺជាផ្លូវកាត់ទៅរកកូនទំព័រដំបូង។ &lt;br /&gt; សូមចុច {0} ដើម្បីបន្តរទៅរកទំព័រនោះ។</target></trans-unit>
+			<target xml:lang="km" state="translated">នេះគឺជាផ្លូវកាត់ទៅរកកូនទំព័រដំបូង។ &lt;br /&gt; សូមចុច {0} ដើម្បីបន្តទៅរកទំព័រនោះ។</target><alt-trans><target xml:lang="km">នេះគឺជាផ្លូវកាត់ទៅរកកូនទំព័រដំបូង។ &lt;br /&gt; សូមចុច {0} ដើម្បីបន្តរទៅរកទំព័រនោះ។</target></alt-trans></trans-unit>
       <trans-unit id="shortcut.clickToContinueToParentNode" xml:space="preserve">
 				<source>This is a shortcut to the parent page.&lt;br /&gt;Click {0} to continue to the page.</source>
 			<target xml:lang="km" state="translated">នេះគឺជាផ្លូវកាត់ទៅរកទំព័រមេ។ &lt;br /&gt; សូមចុច {0} ដើម្បីបន្តរទៅរកទំព័រនោះ។</target></trans-unit>
@@ -284,14 +308,14 @@
 				<source>Document options</source>
 			<target xml:lang="km" state="translated">ជម្រើសនៃឯកសារ</target></trans-unit>
       <trans-unit id="content.inspector.validators.stringLength.outOfBounds" xml:space="preserve">
-				<source>The length of this text must be between {{minimum}} and {{maximum}} characters.</source>
-			<target xml:lang="km" state="translated">ប្រវែងនៃអត្ថបទនេះត្រូវតែនៅចន្លោះ {{អប្បរមា}} និង {{អតិបរមា}} តួអក្សរ។</target></trans-unit>
+				<source>The length of this text must be between {minimum} and {maximum} characters.</source>
+			<target xml:lang="km" state="translated">ប្រវែងនៃអត្ថបទនេះត្រូវតែនៅចន្លោះ {អប្បរមា} និង {អតិបរមា} តួអក្សរ។</target></trans-unit>
       <trans-unit id="content.inspector.validators.stringLength.smallerThanMinimum" xml:space="preserve">
-				<source>This field must contain at least {{minimum}} characters.</source>
-			<target xml:lang="km" state="translated">ជួរឈរនេះត្រូវតែមានយ៉ាងហោចណាស់ {{អប្បរមា}} តួអក្សរ។</target></trans-unit>
+				<source>This field must contain at least {minimum} characters.</source>
+			<target xml:lang="km" state="translated">ជួរឈរនេះត្រូវតែមានយ៉ាងហោចណាស់ {អប្បរមា} តួអក្សរ។</target></trans-unit>
       <trans-unit id="content.inspector.validators.stringLength.greaterThanMaximum" xml:space="preserve">
-				<source>This text may not exceed {{maximum}} characters.</source>
-			<target xml:lang="km" state="translated">អត្ថបទនេះមិនអាចលើសពី {{អតិបរមា}} តួអក្សរ។</target></trans-unit>
+				<source>This text may not exceed {maximum} characters.</source>
+			<target xml:lang="km" state="translated">អត្ថបទនេះមិនអាចលើសពី {អតិបរមា} តួអក្សរ។</target></trans-unit>
       <trans-unit id="content.inspector.validators.alphanumericValidator" xml:space="preserve">
 				<source>Only regular characters (a to z, umlauts, ...) and numbers are allowed.</source>
 			<target xml:lang="km" state="translated">បានតែអក្សរឡាតាំង និងលេខតែប៉ុណ្ណោះ</target></trans-unit>
@@ -299,20 +323,20 @@
 				<source>The given subject was not countable.</source>
 			<target xml:lang="km" state="translated">ប្រធានបទមិនត្រូវបានរាប់បញ្ជូល.</target></trans-unit>
       <trans-unit id="content.inspector.validators.countValidator.countBetween" xml:space="preserve">
-				<source>The count must be between {{minimum}} and {{maximum}}.</source>
-			<target xml:lang="km" state="translated">ការរាប់ចំនួនត្រូវតែនៅចន្លោះ {{អប្បរមា}} និង {{អតិបរមា}} ។</target></trans-unit>
+				<source>The count must be between {minimum} and {maximum}.</source>
+			<target xml:lang="km" state="translated">ការរាប់ចំនួនត្រូវតែនៅចន្លោះ {អប្បរមា} និង {អតិបរមា} ។</target></trans-unit>
       <trans-unit id="content.inspector.validators.dateTimeRangeValidator.invalidDate" xml:space="preserve">
 				<source>The given value was not a valid date.</source>
 			<target xml:lang="km" state="translated">តម្លៃដែលឲ្យមិនត្រឹមត្រូវថ្ងៃទេ</target></trans-unit>
       <trans-unit id="content.inspector.validators.dateTimeRangeValidator.mustBeBetween" xml:space="preserve">
-				<source>The given date must be between {{formatEarliestDate}} and {{formatLatestDate}}</source>
-			<target xml:lang="km" state="translated">កាលបរិច្ឆេទដែលបានផ្ដល់ឱ្យត្រូវតែនៅចន្លោះ {{formatEarliestDate}} និង {{formatLatestDate}}</target></trans-unit>
+				<source>The given date must be between {formatEarliestDate} and {formatLatestDate}</source>
+			<target xml:lang="km" state="translated">កាលបរិច្ឆេទដែលបានផ្ដល់ឱ្យត្រូវតែនៅចន្លោះ {formatEarliestDate} និង {formatLatestDate}</target></trans-unit>
       <trans-unit id="content.inspector.validators.dateTimeRangeValidator.mustBeAfter" xml:space="preserve">
-				<source>The given date must be after {{formatEarliestDate}}</source>
-			<target xml:lang="km" state="translated">កាលបរិច្ឆេទដែលបានផ្ដល់ឱ្យត្រូវតែនៅបន្ទាប់ពី {{formatEarliestDate}}</target></trans-unit>
+				<source>The given date must be after {formatEarliestDate}</source>
+			<target xml:lang="km" state="translated">កាលបរិច្ឆេទដែលបានផ្ដល់ឱ្យត្រូវតែនៅបន្ទាប់ពី {formatEarliestDate}</target></trans-unit>
       <trans-unit id="content.inspector.validators.dateTimeRangeValidator.mustBeBefore" xml:space="preserve">
-				<source>The given date must be before {{formatLatestDate}}</source>
-			<target xml:lang="km" state="translated">កាលបរិច្ឆេទដែលបានផ្ដល់ឱ្យត្រូវតែនៅពីមុខ {{formatEarliestDate}}</target></trans-unit>
+				<source>The given date must be before {formatLatestDate}</source>
+			<target xml:lang="km" state="translated">កាលបរិច្ឆេទដែលបានផ្ដល់ឱ្យត្រូវតែនៅពីមុខ {formatEarliestDate}</target></trans-unit>
       <trans-unit id="content.inspector.validators.emailAddressValidator.invalidEmail" xml:space="preserve">
 				<source>Please specify a valid email address.</source>
 			<target xml:lang="km" state="translated">សូមបញ្ជាក់អាស័យដ្ឋានអ៊ីម៉ែលត្រឹមត្រូវមួយ។</target></trans-unit>
@@ -332,11 +356,11 @@
 				<source>A valid number is expected.</source>
 			<target xml:lang="km" state="translated">ត្រូវការជាចំនួនលេខ</target><alt-trans><target xml:lang="km">លេខដែលត្រឹមត្រូវនឹងត្រូវបានរំពឹងទុក</target></alt-trans></trans-unit>
       <trans-unit id="content.inspector.validators.numberRangeValidator.numberShouldBeInRange" xml:space="preserve">
-				<source>Please enter a valid number between {{minimum}} and {{maximum}}</source>
-			<target xml:lang="km" state="translated">សូមបញ្ចូលលេខដែលត្រឹមត្រូវរវាងចន្លោះ {{អប្បរមា}} និង {{អតិបរមា}}</target></trans-unit>
+				<source>Please enter a valid number between {minimum} and {maximum}</source>
+			<target xml:lang="km" state="translated">សូមបញ្ចូលលេខដែលត្រឹមត្រូវរវាងចន្លោះ {អប្បរមា} និង {អតិបរមា}</target></trans-unit>
       <trans-unit id="content.inspector.validators.regularExpressionValidator.patternDoesNotMatch" xml:space="preserve">
-				<source>The given subject did not match the pattern ({{pattern}})</source>
-			<target xml:lang="km" state="translated">គាត់បានផ្តល់ឱ្យប្រធានបទនោះមិនជាផ្គូផ្គងលំនាំ ({{គំរូ}})</target></trans-unit>
+				<source>The given subject did not match the pattern ({pattern})</source>
+			<target xml:lang="km" state="translated">គាត់បានផ្តល់ឱ្យប្រធានបទនោះមិនជាផ្គូផ្គងលំនាំ ({គំរូ})</target></trans-unit>
       <trans-unit id="content.inspector.validators.stringValidator.stringIsExpected" xml:space="preserve">
 				<source>A valid string is expected.</source>
 			<target xml:lang="km" state="translated">អក្សរដែលត្រូវរំពឹងថានឹងមានសុពលភាព</target><alt-trans><target xml:lang="km">ត្រូវការជាអក្សរ</target></alt-trans></trans-unit>
@@ -427,6 +451,9 @@
       <trans-unit id="authenticating" xml:space="preserve">
 				<source>Authenticating</source>
 			<target xml:lang="km" state="translated">កំពង់ផ្តល់សិទ្ធ</target></trans-unit>
+      <trans-unit id="logout" xml:space="preserve">
+				<source>Logout</source>
+			<target xml:lang="km" state="translated">ចាកចេញ</target></trans-unit>
       <!-- Error handlers -->
       <trans-unit id="error.exception.goToSetup" xml:space="preserve">
 				<source>Go to setup</source>
@@ -461,6 +488,23 @@
       <trans-unit id="error.invalidNodeType.description" xml:space="preserve">
 				<source>The configuration of the NodeType that is supposed to be rendered here is not available. Probably you renamed the NodeType and are missing a migration or you simply misspelled it.</source>
 			<target xml:lang="km" state="translated">ការកំណត់រចនាសម្ព័ន្ធត្រូវបានសន្មត់ថា NodeType ត្រូវបានបង្ហាញនៅទីនេះមិនអាចរកបាន។ ប្រហែលជាអ្នកបានប្ដូរឈ្មោះ NodeType និងត្រូវបានខកខាន migration ឬអ្នកសរសេរមិនបានត្រឹមត្រូវ។</target></trans-unit>
+      <!-- Miscellaneous -->
+      <trans-unit id="masterPlugins.nodeTypeOnPageLabel" xml:space="preserve">
+				<source>"{nodeTypeName}" on page "{pageLabel}"</source>
+			<target xml:lang="km" state="translated">"{nodeTypeName}" នៅលើទំព័រ "{pageLabel}"</target></trans-unit>
+      <!-- Service output -->
+      <trans-unit id="service.nodes.title" xml:space="preserve">
+				<source>Nodes</source>
+			<target xml:lang="km" state="needs-translation">Nodes</target></trans-unit>
+      <trans-unit id="service.nodes.show" xml:space="preserve">
+				<source>Show</source>
+			<target xml:lang="km" state="translated">បង្ហាញ</target></trans-unit>
+      <trans-unit id="service.nodes.noPublicUrl" xml:space="preserve">
+				<source>This node cannot be accessed through a public URL</source>
+			<target xml:lang="km" state="needs-translation">This node cannot be accessed through a public URL</target></trans-unit>
+      <trans-unit id="service.nodes.nodeProperties" xml:space="preserve">
+				<source>Node Properties</source>
+			<target xml:lang="km" state="needs-translation">Node Properties</target></trans-unit>
     </body>
   </file>
 </xliff>
