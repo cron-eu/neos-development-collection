@@ -117,10 +117,6 @@ class FrontendNodeRoutePartHandler extends DynamicRoutePart implements FrontendN
             return false;
         }
 
-        if ($node->getWorkspace()->getName() === 'live' && $node->isHidden() === true) {
-            return false;
-        }
-
         $this->value = $node->getContextPath();
 
         return true;
@@ -499,7 +495,7 @@ class FrontendNodeRoutePartHandler extends DynamicRoutePart implements FrontendN
     {
         $contextProperties = array(
             'workspaceName' => $workspaceName,
-            'invisibleContentShown' => true,
+            'invisibleContentShown' => ($workspaceName !== 'live'),
             'inaccessibleContentShown' => ($workspaceName !== 'live'),
             'dimensions' => $dimensionsAndDimensionValues
         );
