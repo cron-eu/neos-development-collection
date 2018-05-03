@@ -11,7 +11,8 @@ namespace TYPO3\Neos\Domain\Service;
  * source code.
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use /** @noinspection PhpUnusedAliasInspection */
+    TYPO3\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Service\Context;
 
 /**
