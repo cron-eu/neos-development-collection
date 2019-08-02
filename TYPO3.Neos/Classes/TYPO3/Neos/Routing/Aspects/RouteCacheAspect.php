@@ -45,7 +45,6 @@ class RouteCacheAspect
         list($nodePath, $contextArguments) = explode('@', $values['node']);
         $context = $this->getContext($contextArguments);
         $node = $context->getNode($nodePath);
-
         if (!$node instanceof NodeInterface) {
             return;
         }
@@ -54,7 +53,7 @@ class RouteCacheAspect
         $node = $node->getParent();
 
         $values['node-parent-identifier'] = array();
-        while ($node !== NULL) {
+        while ($node !== null) {
             $values['node-parent-identifier'][] = $node->getIdentifier();
             $node = $node->getParent();
         }

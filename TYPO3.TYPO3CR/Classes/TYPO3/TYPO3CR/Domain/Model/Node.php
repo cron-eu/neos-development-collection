@@ -19,6 +19,7 @@ use TYPO3\TYPO3CR\Domain\Service\Context;
 use TYPO3\TYPO3CR\Exception\NodeConstraintException;
 use TYPO3\TYPO3CR\Exception\NodeException;
 use TYPO3\TYPO3CR\Exception\NodeExistsException;
+use TYPO3\TYPO3CR\Utility;
 
 /**
  * This is the main API for storing and retrieving content in the system.
@@ -177,7 +178,23 @@ class Node implements NodeInterface, CacheAwareInterface
 
             /** @var NodeData $nodeData */
             foreach ($nodeDataVariants as $nodeData) {
-                $nodeVariant = $this->createNodeForVariant($nodeData);
+                // $nodeDataVariants at this point also contains *our own NodeData reference* ($this->nodeData), as we find all NodeData objects
+                // (across all dimensions) with the same path.
+                //
+                // We need to ensure that our own Node object's nodeData reference ($this->nodeData) is also updated correctly if a new NodeData object
+                // is returned; as we rely on the fact that $this->getPath() will return the new node path in all circumstances.
+                //
+                // However, $this->createNodeForVariant() only returns $this if the Context object is the same as $this->context; which is not
+                // the case if $this->context contains dimension fallbacks such as "Language: EN, DE".
+                //
+                // The "if" statement below is actually a workaround to ensure that if the NodeData object is our own one, we update *ourselves* correctly,
+                // and thus return the correct (new) Node Path when calling $this->getPath() afterwards.
+                if ($this->nodeData === $nodeData) {
+                    $nodeVariant = $this;
+                } else {
+                    $nodeVariant = $this->createNodeForVariant($nodeData);
+                }
+
                 if ($nodeVariant !== null) {
                     $pathSuffix = substr($nodeVariant->getPath(), strlen($originalPath));
                     $possibleShadowedNodeData = $nodeData->move($path . $pathSuffix, $this->context->getWorkspace());
@@ -761,7 +778,7 @@ class Node implements NodeInterface, CacheAwareInterface
             if ($nodeType->hasConfiguration('properties.' . $propertyName)) {
                 $expectedPropertyType = $nodeType->getPropertyType($propertyName);
                 switch ($expectedPropertyType) {
-                    case 'references' :
+                    case 'references':
                         if ($returnNodesAsIdentifiers === false) {
                             $nodes = array();
                             foreach ($value as $nodeIdentifier) {
@@ -774,7 +791,7 @@ class Node implements NodeInterface, CacheAwareInterface
                             $value = $nodes;
                         }
                         break;
-                    case 'reference' :
+                    case 'reference':
                         if ($returnNodesAsIdentifiers === false) {
                             $value = $this->context->getNodeByIdentifier($value);
                         }
@@ -947,7 +964,7 @@ class Node implements NodeInterface, CacheAwareInterface
             }
 
             foreach ($nodeType->getAutoCreatedChildNodes() as $childNodeName => $childNodeType) {
-                $childNodeIdentifier = $this->buildAutoCreatedChildNodeIdentifier($childNodeName, $newNode->getIdentifier());
+                $childNodeIdentifier = Utility::buildAutoCreatedChildNodeIdentifier($childNodeName, $newNode->getIdentifier());
                 $alreadyPresentChildNode = $newNode->getNode($childNodeName);
                 if ($alreadyPresentChildNode === null) {
                     $newNode->createNode($childNodeName, $childNodeType, $childNodeIdentifier);
@@ -960,22 +977,6 @@ class Node implements NodeInterface, CacheAwareInterface
         $this->emitAfterNodeCreate($newNode);
 
         return $newNode;
-    }
-
-    /**
-     * Generate a stable identifier for auto-created child nodes
-     *
-     * This is needed if multiple node variants are created through "createNode" with different dimension values. If
-     * child nodes with the same path and different identifiers exist, bad things can happen.
-     *
-     * @param string $childNodeName
-     * @param string $identifier
-     * @return string The generated UUID like identifier
-     */
-    protected function buildAutoCreatedChildNodeIdentifier($childNodeName, $identifier)
-    {
-        $hex = md5($identifier . '-' . $childNodeName);
-        return substr($hex, 0, 8) . '-' . substr($hex, 8, 4) . '-' . substr($hex, 12, 4) . '-' . substr($hex, 16, 4) . '-' . substr($hex, 20, 12);
     }
 
     /**
@@ -1590,7 +1591,9 @@ class Node implements NodeInterface, CacheAwareInterface
             } elseif (!in_array($targetDimensionValue, $dimensions[$dimensionName], true)) {
                 $contextDimensionValues = $contextDimensions[$dimensionName];
                 $targetPositionInContext = array_search($targetDimensionValue, $contextDimensionValues, true);
-                $nodePositionInContext = min(array_map(function ($value) use ($contextDimensionValues) { return array_search($value, $contextDimensionValues, true); }, $dimensions[$dimensionName]));
+                $nodePositionInContext = min(array_map(function ($value) use ($contextDimensionValues) {
+                    return array_search($value, $contextDimensionValues, true);
+                }, $dimensions[$dimensionName]));
 
                 $val = $targetPositionInContext !== false && $nodePositionInContext !== false && $targetPositionInContext >= $nodePositionInContext;
                 if ($val === false) {

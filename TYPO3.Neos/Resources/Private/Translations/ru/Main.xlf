@@ -6,6 +6,9 @@
       <trans-unit id="autoPublish" xml:space="preserve" approved="yes">
 				<source>Auto-Publish</source>
 			<target xml:lang="ru">Автоматическая публикация</target></trans-unit>
+      <trans-unit id="autoPublishTo" xml:space="preserve" approved="yes">
+				<source>Auto-Publish to {0}</source>
+			<target xml:lang="ru">Автоматическая публикация в {0}</target></trans-unit>
       <trans-unit id="apply" xml:space="preserve" approved="yes">
 				<source>Apply</source>
 			<target xml:lang="ru">Применить</target></trans-unit>
@@ -15,6 +18,9 @@
       <trans-unit id="cancel" xml:space="preserve" approved="yes">
 				<source>Cancel</source>
 			<target xml:lang="ru">Отмена</target></trans-unit>
+      <trans-unit id="back" xml:space="preserve" approved="yes">
+				<source>Back</source>
+			<target xml:lang="ru">Назад</target></trans-unit>
       <trans-unit id="choose" xml:space="preserve" approved="yes">
 				<source>Choose</source>
 			<target xml:lang="ru">Выберите</target></trans-unit>
@@ -24,6 +30,9 @@
       <trans-unit id="content" xml:space="preserve" approved="yes">
 				<source>Content</source>
 			<target xml:lang="ru">Содержимое</target><alt-trans><target xml:lang="ru">Контент</target></alt-trans></trans-unit>
+      <trans-unit id="node" xml:space="preserve" approved="yes">
+				<source>Node</source>
+			<target xml:lang="ru">Узел</target></trans-unit>
       <trans-unit id="contentView" xml:space="preserve" approved="yes">
 				<source>Content View</source>
 			<target xml:lang="ru">Просмотр содержимого</target></trans-unit>
@@ -111,12 +120,27 @@
       <trans-unit id="publish" xml:space="preserve" approved="yes">
 				<source>Publish</source>
 			<target xml:lang="ru">Опубликовать</target></trans-unit>
+      <trans-unit id="publishTo" xml:space="preserve" approved="yes">
+				<source>Publish to {0}</source>
+			<target xml:lang="ru">Опубликовать в {0}</target></trans-unit>
+      <trans-unit id="publishAllChangesForCurrentPage" xml:space="preserve" approved="yes">
+				<source>Publish all changes for current page</source>
+			<target xml:lang="ru">Опубликовать все изменения для текущей страницы</target></trans-unit>
+      <trans-unit id="cantPublishBecauseTargetWorkspaceIsReadOnly" xml:space="preserve" approved="yes">
+				<source>Can't publish because the target workspace is read-only</source>
+			<target xml:lang="ru">Не удается опубликовать, потому что целевая рабочая область является неизменяемой</target></trans-unit>
+      <trans-unit id="publishing" xml:space="preserve" approved="yes">
+				<source>Publishing</source>
+			<target xml:lang="ru">Oпубликовать</target><alt-trans><target xml:lang="ru">Публикация</target></alt-trans></trans-unit>
       <trans-unit id="published" xml:space="preserve" approved="yes">
 				<source>Published</source>
 			<target xml:lang="ru">Опубликовано</target></trans-unit>
       <trans-unit id="targetWorkspace" xml:space="preserve" approved="yes">
 				<source>Target workspace</source>
 			<target xml:lang="ru">Целевой Workspace</target><alt-trans><target xml:lang="ru">Целевая рабочее место</target></alt-trans><alt-trans><target xml:lang="ru">Целевое рабочее пространство</target></alt-trans><alt-trans><target xml:lang="ru">Целевое рабочее место</target></alt-trans><alt-trans><target xml:lang="ru">Целевая рабочее пространство</target></alt-trans></trans-unit>
+      <trans-unit id="currentWorkspace" xml:space="preserve" approved="yes">
+				<source>Current workspace</source>
+			<target xml:lang="ru">Текущая рабочая область</target></trans-unit>
       <trans-unit id="remove" xml:space="preserve" approved="yes">
 				<source>Remove</source>
 			<target xml:lang="ru">Удалить</target></trans-unit>
@@ -124,8 +148,8 @@
 				<source>Refresh</source>
 			<target xml:lang="ru">Обновить</target></trans-unit>
       <trans-unit id="saving" xml:space="preserve" approved="yes">
-				<source>Saving...</source>
-			<target xml:lang="ru">Сохранение...</target></trans-unit>
+				<source>Saving</source>
+			<target xml:lang="ru">Сохранение</target><alt-trans><target xml:lang="ru">Сохранение...</target></alt-trans></trans-unit>
       <trans-unit id="saved" xml:space="preserve" approved="yes">
 				<source>Saved</source>
 			<target xml:lang="ru">Сохранено</target></trans-unit>
@@ -148,13 +172,13 @@
 				<source>Label</source>
 			<target xml:lang="ru">Этикетка</target><alt-trans><target xml:lang="ru">Метка</target></alt-trans></trans-unit>
       <trans-unit id="nodeTypeCaption" xml:space="preserve" approved="yes">
-				<source>Node type</source>
-			<target xml:lang="ru">Тип узла</target></trans-unit>
+				<source>Content Type</source>
+			<target xml:lang="ru">Тип содержимого</target><alt-trans><target xml:lang="ru">Тип узла</target></alt-trans></trans-unit>
       <trans-unit id="pathCaption" xml:space="preserve" approved="yes">
 				<source>Path</source>
 			<target xml:lang="ru">Путь</target></trans-unit>
       <trans-unit id="relativePathCaption" xml:space="preserve" approved="yes">
-				<source>Relative path</source>
+				<source>Relative Path</source>
 			<target xml:lang="ru">Относительный путь</target></trans-unit>
       <!-- node types -->
       <trans-unit id="nodeTypes.groups.general" xml:space="preserve" approved="yes">
@@ -283,14 +307,14 @@
 				<source>Document options</source>
 			<target xml:lang="ru">Параметры документа</target></trans-unit>
       <trans-unit id="content.inspector.validators.stringLength.outOfBounds" xml:space="preserve" approved="yes">
-				<source>The length of this text must be between {{minimum}} and {{maximum}} characters.</source>
-			<target xml:lang="ru">Длина этого текста должна быть между {{minimum}} и {{maximum}} символами.</target></trans-unit>
+				<source>The length of this text must be between {minimum} and {maximum} characters.</source>
+			<target xml:lang="ru">Длина этого текста должна быть между {minimum} и {maximum} символами.</target></trans-unit>
       <trans-unit id="content.inspector.validators.stringLength.smallerThanMinimum" xml:space="preserve" approved="yes">
-				<source>This field must contain at least {{minimum}} characters.</source>
-			<target xml:lang="ru">Это поле должно содержать по крайней мере {{minimum}} символов.</target></trans-unit>
+				<source>This field must contain at least {minimum} characters.</source>
+			<target xml:lang="ru">Это поле должно содержать по крайней мере {minimum} символов.</target></trans-unit>
       <trans-unit id="content.inspector.validators.stringLength.greaterThanMaximum" xml:space="preserve" approved="yes">
-				<source>This text may not exceed {{maximum}} characters.</source>
-			<target xml:lang="ru">Этот текст не может превышать {{maximum}} символов.</target></trans-unit>
+				<source>This text may not exceed {maximum} characters.</source>
+			<target xml:lang="ru">Этот текст не может превышать {maximum} символов.</target></trans-unit>
       <trans-unit id="content.inspector.validators.alphanumericValidator" xml:space="preserve" approved="yes">
 				<source>Only regular characters (a to z, umlauts, ...) and numbers are allowed.</source>
 			<target xml:lang="ru">Разрешены только латинские(a до z, умлауты, ...) малые буквы и цифры.</target></trans-unit>
@@ -298,20 +322,20 @@
 				<source>The given subject was not countable.</source>
 			<target xml:lang="ru">Содержимое не является исчислимым.</target></trans-unit>
       <trans-unit id="content.inspector.validators.countValidator.countBetween" xml:space="preserve" approved="yes">
-				<source>The count must be between {{minimum}} and {{maximum}}.</source>
-			<target xml:lang="ru">Количество должно быть между {{minimum}} и {{maximum}}.</target></trans-unit>
+				<source>The count must be between {minimum} and {maximum}.</source>
+			<target xml:lang="ru">Количество должно быть между {minimum} и {maximum}.</target></trans-unit>
       <trans-unit id="content.inspector.validators.dateTimeRangeValidator.invalidDate" xml:space="preserve" approved="yes">
 				<source>The given value was not a valid date.</source>
 			<target xml:lang="ru">Данное значение не является допустимой датой.</target></trans-unit>
       <trans-unit id="content.inspector.validators.dateTimeRangeValidator.mustBeBetween" xml:space="preserve" approved="yes">
-				<source>The given date must be between {{formatEarliestDate}} and {{formatLatestDate}}</source>
-			<target xml:lang="ru">Данная дата должна быть между {{formatEarliestDate}} и {{formatLatestDate}}</target></trans-unit>
+				<source>The given date must be between {formatEarliestDate} and {formatLatestDate}</source>
+			<target xml:lang="ru">Данная дата должна быть между {formatEarliestDate} и {formatLatestDate}</target></trans-unit>
       <trans-unit id="content.inspector.validators.dateTimeRangeValidator.mustBeAfter" xml:space="preserve" approved="yes">
-				<source>The given date must be after {{formatEarliestDate}}</source>
-			<target xml:lang="ru">Данная дата должна быть позже чем {{formatEarliestDate}}</target><alt-trans><target xml:lang="ru">Данная дата должна быть позже {{formatEarliestDate}}</target></alt-trans><alt-trans><target xml:lang="ru">Данная дата должна быть после {{formatEarliestDate}}</target></alt-trans></trans-unit>
+				<source>The given date must be after {formatEarliestDate}</source>
+			<target xml:lang="ru">Данная дата должна быть позже чем {formatEarliestDate}</target><alt-trans><target xml:lang="ru">Данная дата должна быть позже {formatEarliestDate}</target></alt-trans><alt-trans><target xml:lang="ru">Данная дата должна быть после {formatEarliestDate}</target></alt-trans></trans-unit>
       <trans-unit id="content.inspector.validators.dateTimeRangeValidator.mustBeBefore" xml:space="preserve" approved="yes">
-				<source>The given date must be before {{formatLatestDate}}</source>
-			<target xml:lang="ru">Данная дата должна быть раньше чем {{formatLatestDate}}</target><alt-trans><target xml:lang="ru">Данная дата должна быть до {{formatLatestDate}}</target></alt-trans></trans-unit>
+				<source>The given date must be before {formatLatestDate}</source>
+			<target xml:lang="ru">Данная дата должна быть раньше чем {formatLatestDate}</target><alt-trans><target xml:lang="ru">Данная дата должна быть до {formatLatestDate}</target></alt-trans></trans-unit>
       <trans-unit id="content.inspector.validators.emailAddressValidator.invalidEmail" xml:space="preserve" approved="yes">
 				<source>Please specify a valid email address.</source>
 			<target xml:lang="ru">Пожалуйста укажите верный адрес электронной почты.</target></trans-unit>
@@ -331,11 +355,11 @@
 				<source>A valid number is expected.</source>
 			<target xml:lang="ru">Ожидается число.</target></trans-unit>
       <trans-unit id="content.inspector.validators.numberRangeValidator.numberShouldBeInRange" xml:space="preserve" approved="yes">
-				<source>Please enter a valid number between {{minimum}} and {{maximum}}</source>
-			<target xml:lang="ru">Пожалуйста, введите число от {{minimum}} до {{maximum}}</target></trans-unit>
+				<source>Please enter a valid number between {minimum} and {maximum}</source>
+			<target xml:lang="ru">Пожалуйста, введите число от {minimum} до {maximum}</target></trans-unit>
       <trans-unit id="content.inspector.validators.regularExpressionValidator.patternDoesNotMatch" xml:space="preserve" approved="yes">
-				<source>The given subject did not match the pattern ({{pattern}})</source>
-			<target xml:lang="ru">Данное поле не соответствует шаблону ({{pattern}})</target></trans-unit>
+				<source>The given subject did not match the pattern ({pattern})</source>
+			<target xml:lang="ru">Данное поле не соответствует шаблону ({pattern})</target></trans-unit>
       <trans-unit id="content.inspector.validators.stringValidator.stringIsExpected" xml:space="preserve" approved="yes">
 				<source>A valid string is expected.</source>
 			<target xml:lang="ru">Ожидается текст.</target></trans-unit>
@@ -425,6 +449,9 @@
       <trans-unit id="authenticating" xml:space="preserve" approved="yes">
 				<source>Authenticating</source>
 			<target xml:lang="ru">Аутентификация</target><alt-trans><target xml:lang="ru">Авторизация</target></alt-trans></trans-unit>
+      <trans-unit id="logout" xml:space="preserve" approved="yes">
+				<source>Logout</source>
+			<target xml:lang="ru">Выйти из системы</target><alt-trans><target xml:lang="ru">Выйти из профиля</target></alt-trans></trans-unit>
       <!-- Error handlers -->
       <trans-unit id="error.exception.goToSetup" xml:space="preserve" approved="yes">
 				<source>Go to setup</source>
@@ -459,6 +486,23 @@
       <trans-unit id="error.invalidNodeType.description" xml:space="preserve" approved="yes">
 				<source>The configuration of the NodeType that is supposed to be rendered here is not available. Probably you renamed the NodeType and are missing a migration or you simply misspelled it.</source>
 			<target xml:lang="ru">Настройка типа элемента, который должен отображаться здесь не доступен. Вероятно вы переименовали тип элемента и не выполнили миграцию или просто допустили опечатку.</target></trans-unit>
+      <!-- Miscellaneous -->
+      <trans-unit id="masterPlugins.nodeTypeOnPageLabel" xml:space="preserve" approved="yes">
+				<source>"{nodeTypeName}" on page "{pageLabel}"</source>
+			<target xml:lang="ru">"{nodeTypeName}" на странице "{pageLabel}"</target></trans-unit>
+      <!-- Service output -->
+      <trans-unit id="service.nodes.title" xml:space="preserve" approved="yes">
+				<source>Nodes</source>
+			<target xml:lang="ru">Узлы</target></trans-unit>
+      <trans-unit id="service.nodes.show" xml:space="preserve" approved="yes">
+				<source>Show</source>
+			<target xml:lang="ru">Показать</target></trans-unit>
+      <trans-unit id="service.nodes.noPublicUrl" xml:space="preserve" approved="yes">
+				<source>This node cannot be accessed through a public URL</source>
+			<target xml:lang="ru">Этот узел не может быть доступным через общедоступный URL-адрес</target></trans-unit>
+      <trans-unit id="service.nodes.nodeProperties" xml:space="preserve" approved="yes">
+				<source>Node Properties</source>
+			<target xml:lang="ru">Свойства узла</target></trans-unit>
     </body>
   </file>
 </xliff>
